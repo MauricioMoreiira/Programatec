@@ -2,7 +2,7 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <!-- Google tag (gtag.js) — Google Ads / medição de conversões -->
+    <!-- Google tag (gtag.js): Google Ads / medição de conversões -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11021910578"></script>
     <script>
       window.dataLayer = window.dataLayer || []
@@ -12,20 +12,73 @@
       gtag('js', new Date())
       gtag('config', 'AW-11021910578')
     </script>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- Conversão Google Ads: `reportLeadFormConversion` no envio do formulário (src/utils/adsConversion.js) -->
+    <script>
+      window.gtag_report_conversion = function (url) {
+        function openDest() {
+          if (url) {
+            window.open(url, '_blank', 'noopener,noreferrer')
+          }
+        }
+        if (typeof gtag === 'function') {
+          gtag('event', 'conversion', {
+            send_to: 'AW-11021910578/RgFqCLSszIEYELKE1Icp',
+            value: 177.0,
+            currency: 'BRL',
+            transaction_id: '',
+            event_callback: openDest,
+          })
+        } else {
+          openDest()
+        }
+        return false
+      }
+    </script>
+    <link rel="icon" type="image/png" href="/Logo_Programatec.png" sizes="any" />
+    <link rel="apple-touch-icon" href="/Logo_Programatec.png" />
+    <link rel="canonical" href="__SITE_ORIGIN__/" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="color-scheme" content="light" />
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="theme-color" content="#1d4ed8" />
     <meta name="google-site-verification" content="4oFG4YnTIRlxQCFbyG_g2QwgM_za2xsFwtb84ln9w8I" />
     <meta
       name="description"
-      content="Sites e landing pages pensadas para gerar clientes — preço alinhado ao seu objetivo, sem complicação. Quanto custa um site, landing page preço e orçamento site com resposta rápida no WhatsApp."
+      content="Programatec: desenvolvimento de sites sob medida do zero. Landing a partir de R$ 1.200 (7 dias), sites com SEO e tags Google a partir de R$ 2.400 (12 dias), projetos com dados e integrações orçados com transparência. Layout, código e hospedagem."
     />
-    <title>Programatec | Sites e landing pages comerciais</title>
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Programatec" />
+    <meta property="og:title" content="Programatec | Desenvolvimento de sites sob medida" />
+    <meta
+      property="og:description"
+      content="Programatec: desenvolvimento de sites sob medida do zero. Landing a partir de R$ 1.200 (7 dias), sites com SEO e tags Google a partir de R$ 2.400 (12 dias), projetos com dados e integrações orçados com transparência."
+    />
+    <meta property="og:url" content="__SITE_ORIGIN__/" />
+    <meta property="og:image" content="__SITE_ORIGIN__/Logo_Programatec.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:alt" content="Programatec — desenvolvimento de sites sob medida" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Programatec | Desenvolvimento de sites sob medida" />
+    <meta
+      name="twitter:description"
+      content="Sites sob medida do zero: landing, SEO, tags Google, integrações. Layout, código e hospedagem."
+    />
+    <meta name="twitter:image" content="__SITE_ORIGIN__/Logo_Programatec.png" />
+    <title>Programatec | Desenvolvimento de sites sob medida</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Programatec",
+        "url": "__SITE_ORIGIN__/",
+        "logo": "__SITE_ORIGIN__/Logo_Programatec.png",
+        "description": "Desenvolvimento de sites sob medida do zero: landing, sites com SEO e tags Google, projetos com dados e integrações."
+      }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&family=Sora:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
   </head>

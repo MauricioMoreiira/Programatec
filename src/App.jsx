@@ -1,35 +1,57 @@
-import { Header } from './components/Header'
-import { Hero } from './components/Hero'
-import { ValueSection } from './components/ValueSection'
-import { CompareSection } from './components/CompareSection'
-import { PricingSection } from './components/PricingSection'
-import { Benefits } from './components/Benefits'
-import { Differentials } from './components/Differentials'
-import { Process } from './components/Process'
-import { FAQ } from './components/FAQ'
-import { FinalCTA } from './components/FinalCTA'
-import { Footer } from './components/Footer'
-import { WhatsAppFloat } from './components/WhatsAppFloat'
-import { MobileCtaBar } from './components/MobileCtaBar'
+import { useEffect } from 'react'
+import { Nav } from './site/Nav'
+import { Hero } from './site/Hero'
+import { Services } from './site/Services'
+import { About } from './site/About'
+import { Process } from './site/Process'
+import { Pricing } from './site/Pricing'
+import { Faq } from './site/Faq'
+import { Contact } from './site/Contact'
+import { Footer } from './site/Footer'
+import { ContactFloat } from './site/ContactFloat'
+import { MobileBar } from './site/MobileBar'
+import { SECTION_IDS } from './constants'
+
+function scrollToHash() {
+  const raw = window.location.hash.slice(1)
+  if (!raw) return
+  const id = decodeURIComponent(raw.replace(/\+/g, ' '))
+  const el = document.getElementById(id)
+  if (!el) return
+  requestAnimationFrame(() => {
+    el.scrollIntoView({ block: 'start', behavior: 'auto' })
+  })
+}
 
 export default function App() {
+  useEffect(() => {
+    scrollToHash()
+    window.addEventListener('hashchange', scrollToHash)
+    window.addEventListener('popstate', scrollToHash)
+    return () => {
+      window.removeEventListener('hashchange', scrollToHash)
+      window.removeEventListener('popstate', scrollToHash)
+    }
+  }, [])
+
   return (
     <>
-      <Header />
-      <main>
+      <a href={`#${SECTION_IDS.inicio}`} className="pg-skip">
+        Pular para o conteúdo
+      </a>
+      <Nav />
+      <main className="pg-main">
         <Hero />
-        <ValueSection />
-        <CompareSection />
-        <PricingSection />
-        <Benefits />
-        <Differentials />
+        <Services />
+        <About />
         <Process />
-        <FAQ />
-        <FinalCTA />
+        <Pricing />
+        <Faq />
+        <Contact />
+        <Footer />
       </main>
-      <Footer />
-      <WhatsAppFloat />
-      <MobileCtaBar />
+      <ContactFloat />
+      <MobileBar />
     </>
   )
 }
