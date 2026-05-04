@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
-import { ArrowRight } from 'lucide-react'
+import { MessageCircle } from 'lucide-react'
 import { Button } from './Button'
-import { SECTION_IDS, hashForSectionId, navigateToSectionId } from '../constants'
+import { SECTION_IDS, hashForSectionId, navigateToSectionId, whatsappHref } from '../constants'
 
 export function Hero() {
   return (
@@ -48,12 +48,12 @@ export function Hero() {
           transition={{ duration: 0.45, delay: 0.18 }}
         >
           <Button
-            variant="primary"
+            variant="whatsapp"
             className="pg-hero__btn"
-            onClick={() => navigateToSectionId(SECTION_IDS.contato)}
+            href={whatsappHref('Olá! Gostaria de pedir um orçamento.')}
           >
-            Pedir orçamento
-            <ArrowRight size={18} aria-hidden />
+            Falar no WhatsApp
+            <MessageCircle size={18} aria-hidden />
           </Button>
           <Button
             variant="secondary"

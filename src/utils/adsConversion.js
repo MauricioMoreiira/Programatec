@@ -1,6 +1,6 @@
 /**
  * Google Ads: snippet de conversão definido no index.html (`gtag_report_conversion`).
- * Mantido para fluxos que abriam destino em nova aba; o formulário usa `reportLeadFormConversion`.
+ * Pode ser chamado ao abrir WhatsApp ou em outros pontos do funil conforme medição configurada em Google Ads.
  */
 export function gtagReportConversionWithUrl(url) {
   if (typeof window === 'undefined') return
@@ -11,7 +11,7 @@ export function gtagReportConversionWithUrl(url) {
   if (url) window.open(url, '_blank', 'noopener,noreferrer')
 }
 
-/** Dispara conversão de lead (ex.: envio do formulário Formspree) sem abrir URL. */
+/** Dispara conversão de lead configurada na tag Ads, sem navegar para outra URL. */
 export function reportLeadFormConversion() {
   if (typeof window === 'undefined' || typeof window.gtag !== 'function') return
   window.gtag('event', 'conversion', {

@@ -1,10 +1,18 @@
-/** Formulário Formspree. Sobrescreva com VITE_FORMSPREE_ENDPOINT no `.env` se precisar de outro ambiente. */
-export const FORMSPREE_ENDPOINT = (
-  import.meta.env.VITE_FORMSPREE_ENDPOINT || 'https://formspree.io/f/xwvyeeky'
-).trim()
+/** WhatsApp — apenas dígitos (DDI 55 + DDD + número), sem símbolos. */
+export const WHATSAPP_E164_DIGITS = '5551995465854'
 
-/** sessionStorage: plano escolhido na seção Orçamento para pré-preencher o formulário. */
-export const CONTACT_PLAN_STORAGE_KEY = 'pg_contact_plan'
+/** Número exibido no site (DDD 51 Rio Grande do Sul). */
+export const WHATSAPP_DISPLAY_NUMBER = '(51) 99546-5854'
+
+/**
+ * Link `wa.me` com texto opcional já preenchido.
+ * @param {string} [message]
+ */
+export function whatsappHref(message = '') {
+  const base = `https://wa.me/${WHATSAPP_E164_DIGITS}`
+  const t = message.trim()
+  return t ? `${base}?text=${encodeURIComponent(t)}` : base
+}
 
 /** IDs das seções (âncoras), layout v2 — URLs usam hash #id */
 export const SECTION_IDS = {

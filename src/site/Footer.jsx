@@ -1,4 +1,4 @@
-import { SECTION_IDS, hashForSectionId, navigateToSectionId } from '../constants'
+import { SECTION_IDS, hashForSectionId, navigateToSectionId, whatsappHref } from '../constants'
 
 const y = new Date().getFullYear()
 
@@ -45,14 +45,8 @@ export function Footer() {
           >
             Dúvidas
           </a>
-          <a
-            href={hashForSectionId(SECTION_IDS.contato)}
-            onClick={(e) => {
-              e.preventDefault()
-              navigateToSectionId(SECTION_IDS.contato)
-            }}
-          >
-            Fale conosco
+          <a href={whatsappHref()} target="_blank" rel="noopener noreferrer">
+            WhatsApp
           </a>
         </nav>
       </div>

@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { Menu, X } from 'lucide-react'
+import { Menu, MessageCircle, X } from 'lucide-react'
 import { Button } from './Button'
-import { SECTION_IDS, hashForSectionId, navigateToSectionId } from '../constants'
+import { SECTION_IDS, hashForSectionId, navigateToSectionId, whatsappHref } from '../constants'
 
 const links = [
   { label: 'Início', id: SECTION_IDS.inicio },
@@ -64,16 +64,9 @@ export function Nav() {
         </nav>
 
         <div className="pg-nav__end">
-          <Button
-            href={hashForSectionId(SECTION_IDS.contato)}
-            variant="primary"
-            className="pg-nav__cta"
-            onClick={(e) => {
-              e.preventDefault()
-              navigateToSectionId(SECTION_IDS.contato)
-            }}
-          >
-            Fale conosco
+          <Button variant="whatsapp" href={whatsappHref()} className="pg-nav__cta">
+            <MessageCircle size={18} aria-hidden />
+            WhatsApp
           </Button>
           <button
             type="button"
@@ -113,16 +106,13 @@ export function Nav() {
               </a>
             ))}
             <Button
-              href={hashForSectionId(SECTION_IDS.contato)}
-              variant="primary"
+              variant="whatsapp"
+              href={whatsappHref()}
               className="pg-nav__sheet-wa"
-              onClick={(e) => {
-                e.preventDefault()
-                navigateToSectionId(SECTION_IDS.contato)
-                setOpen(false)
-              }}
+              onClick={() => setOpen(false)}
             >
-              Fale conosco
+              <MessageCircle size={18} aria-hidden />
+              WhatsApp
             </Button>
           </motion.div>
         ) : null}

@@ -78,11 +78,10 @@ export function Services() {
       <div className="pg-wrap">
         <header className="pg-section__head">
           <p className="pg-eyebrow">O que entregamos</p>
-          <h2 className="pg-section__title">Decisão comercial primeiro. Tecnologia de ponta a seguir.</h2>
+          <h2 className="pg-section__title">Antes de pensar no design, pensamos no que vai fazer seu site vender.</h2>
           <p className="pg-section__sub">
-            Os valores fechados estão em <strong>Orçamento</strong>. Aqui mostramos a vantagem que você leva para o
-            mercado: oferta e funil bem pensados, site no ritmo que o visitante exige, e base técnica moderna. Tudo isso
-            para você converter hoje e não ficar refém de solução ultrapassada amanhã.
+            Cada decisão é baseada em conversão: mensagem, estrutura e performance. A tecnologia vem para garantir
+            velocidade, SEO e escala, não para complicar.
           </p>
         </header>
 

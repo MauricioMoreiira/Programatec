@@ -1,22 +1,13 @@
-import { Mail, Banknote } from 'lucide-react'
+import { MessageCircle, Banknote } from 'lucide-react'
 import { Button } from './Button'
-import { SECTION_IDS, hashForSectionId, navigateToSectionId } from '../constants'
+import { SECTION_IDS, hashForSectionId, navigateToSectionId, whatsappHref } from '../constants'
 
 export function MobileBar() {
   return (
     <div className="pg-mbar" role="navigation" aria-label="Ações móveis">
-      <Button
-        href={hashForSectionId(SECTION_IDS.contato)}
-        variant="primary"
-        className="pg-mbar__btn"
-        onClick={(e) => {
-          e.preventDefault()
-          navigateToSectionId(SECTION_IDS.contato)
-        }}
-        aria-label="Fale conosco"
-      >
-        <Mail size={18} />
-        Fale conosco
+      <Button variant="whatsapp" href={whatsappHref()} className="pg-mbar__btn" aria-label="Abrir WhatsApp">
+        <MessageCircle size={18} aria-hidden />
+        WhatsApp
       </Button>
       <Button
         href={hashForSectionId(SECTION_IDS.precos)}

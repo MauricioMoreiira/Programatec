@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
-import { ArrowUpRight } from 'lucide-react'
+import { MessageCircle } from 'lucide-react'
 import { Button } from './Button'
-import { CONTACT_PLAN_STORAGE_KEY, SECTION_IDS, navigateToSectionId } from '../constants'
+import { SECTION_IDS, whatsappHref } from '../constants'
 
 const plans = [
   {
@@ -60,19 +60,12 @@ export function Pricing() {
               <p className="pg-pricing__delay">{p.delay}</p>
               <p className="pg-pricing__desc">{p.desc}</p>
               <Button
-                variant={p.highlight ? 'primary' : 'secondary'}
+                variant={p.highlight ? 'whatsapp' : 'secondary'}
                 className="pg-pricing__btn"
-                onClick={() => {
-                  try {
-                    sessionStorage.setItem(CONTACT_PLAN_STORAGE_KEY, p.name)
-                  } catch {
-                    /* ignore */
-                  }
-                  navigateToSectionId(SECTION_IDS.contato)
-                }}
+                href={whatsappHref(`Olá! Tenho interesse no plano "${p.name}".`)}
               >
-                Falar deste plano
-                <ArrowUpRight size={16} aria-hidden />
+                Chamar no WhatsApp
+                <MessageCircle size={16} aria-hidden />
               </Button>
             </motion.article>
           ))}

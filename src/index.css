@@ -818,6 +818,13 @@ a {
   font-size: 1.02rem;
   line-height: 1.55;
 }
+.pg-cta__num {
+  margin: 0 0 1.35rem;
+  font-size: clamp(1.15rem, 2.8vw, 1.35rem);
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 0.03em;
+}
 .pg-cta__row {
   display: flex;
   flex-wrap: wrap;
@@ -1091,7 +1098,7 @@ a {
   color: var(--pg-blue-900);
 }
 
-/* Botão flutuante (contato) e barra móvel */
+/* Botão flutuante (WhatsApp) e barra móvel */
 .pg-float {
   position: fixed;
   right: max(1rem, env(safe-area-inset-right));
@@ -1102,16 +1109,16 @@ a {
   border-radius: 50%;
   display: grid;
   place-items: center;
-  background: linear-gradient(135deg, var(--pg-blue-500), var(--pg-blue-700));
+  background: linear-gradient(135deg, #22c55e, #16a34a);
   color: #fff;
-  box-shadow: 0 14px 32px -10px rgba(37, 99, 235, 0.55);
+  box-shadow: 0 14px 32px -10px rgba(22, 163, 74, 0.52);
   text-decoration: none;
 }
 .pg-float__ring {
   position: absolute;
   inset: -5px;
   border-radius: inherit;
-  border: 2px solid rgba(59, 130, 246, 0.45);
+  border: 2px solid rgba(34, 197, 94, 0.5);
   animation: pg-ping 2.4s ease-out infinite;
 }
 @keyframes pg-ping {
