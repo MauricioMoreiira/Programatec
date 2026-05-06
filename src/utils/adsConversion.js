@@ -15,7 +15,7 @@ export function gtagReportConversionWithUrl(url) {
 export function reportLeadFormConversion() {
   if (typeof window === 'undefined' || typeof window.gtag !== 'function') return
   window.gtag('event', 'conversion', {
-    send_to: 'AW-11021910578/RgFqCLSszIEYELKE1Icp',
+    send_to: 'AW-18139120427/RgFqCLSszIEYELKE1Icp',
     value: 177.0,
     currency: 'BRL',
     transaction_id: '',
