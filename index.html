@@ -71,14 +71,28 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Programatec",
-        "url": "__SITE_ORIGIN__/",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "__SITE_ORIGIN__/icon-512.png"
-        },
-        "description": "Desenvolvimento de sites sob medida do zero: landing, sites com SEO e tags Google, projetos com dados e integrações."
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "__SITE_ORIGIN__/#organization",
+            "name": "Programatec",
+            "url": "__SITE_ORIGIN__/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "__SITE_ORIGIN__/icon-512.png"
+            },
+            "description": "Desenvolvimento de sites sob medida do zero: landing, sites com SEO e tags Google, projetos com dados e integrações."
+          },
+          {
+            "@type": "WebSite",
+            "@id": "__SITE_ORIGIN__/#website",
+            "name": "Programatec",
+            "alternateName": ["Programatec.com.br"],
+            "url": "__SITE_ORIGIN__/",
+            "inLanguage": "pt-BR",
+            "publisher": { "@id": "__SITE_ORIGIN__/#organization" }
+          }
+        ]
       }
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
