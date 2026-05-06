@@ -7,18 +7,24 @@ import toIco from 'to-ico'
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const root = path.join(__dirname, '..')
 const pub = path.join(root, 'public')
-const input = path.join(pub, 'Logo_Programatec.png')
-const bg = { r: 0, g: 0, b: 0, alpha: 1 }
+const input = path.join(pub, 'Logo_Programatec_2026.png')
+/** Preenchimento das margens ao encaixar logo retangular em quadrado (transparente, sem faixa preta). */
+const bg = { r: 0, g: 0, b: 0, alpha: 0 }
 
 async function writeSquarePng(size, filename) {
   await sharp(input)
+    .ensureAlpha()
     .resize(size, size, { fit: 'contain', background: bg })
     .png()
     .toFile(path.join(pub, filename))
 }
 
 async function pngBuffer(size) {
-  return sharp(input).resize(size, size, { fit: 'contain', background: bg }).png().toBuffer()
+  return sharp(input)
+    .ensureAlpha()
+    .resize(size, size, { fit: 'contain', background: bg })
+    .png()
+    .toBuffer()
 }
 
 await writeSquarePng(48, 'icon-48.png')

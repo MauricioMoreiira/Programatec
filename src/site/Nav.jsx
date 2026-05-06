@@ -38,7 +38,7 @@ export function Nav() {
         >
           <img
             className="pg-nav__mark"
-            src="/Logo_Programatec.png"
+            src="/Logo_Programatec_2026.png"
             alt=""
             width={34}
             height={34}
