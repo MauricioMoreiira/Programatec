@@ -1,15 +1,16 @@
 import { motion } from 'framer-motion'
 import { MessageCircle } from 'lucide-react'
 import { whatsappHref } from '../constants'
+import { trackLeadConversionOpen } from '../utils/adsConversion'
 
 export function ContactFloat() {
+  const waUrl = whatsappHref()
   return (
     <motion.a
-      href={whatsappHref()}
-      target="_blank"
-      rel="noopener noreferrer"
+      href={waUrl}
       className="pg-float"
       aria-label="Abrir WhatsApp"
+      onClick={(e) => trackLeadConversionOpen(e, waUrl)}
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ type: 'spring', stiffness: 280, damping: 20, delay: 0.4 }}

@@ -12,24 +12,23 @@
       gtag('js', new Date())
       gtag('config', 'AW-18139120427')
     </script>
-    <!-- Conversão Google Ads: veja `src/utils/adsConversion.js` (ex.: cliques em WhatsApp) -->
+    <!-- Google Ads: conversão por clique (Enviar formulário de lead). Chame gtag_report_conversion no botão/link. -->
     <script>
       window.gtag_report_conversion = function (url) {
-        function openDest() {
-          if (url) {
+        var callback = function () {
+          if (typeof url !== 'undefined' && url) {
             window.open(url, '_blank', 'noopener,noreferrer')
           }
         }
         if (typeof gtag === 'function') {
           gtag('event', 'conversion', {
-            send_to: 'AW-18139120427/RgFqCLSszIEYELKE1Icp',
-            value: 177.0,
+            send_to: 'AW-18139120427/sulsCOyDnKccEKuGtMlD',
+            value: 1.0,
             currency: 'BRL',
-            transaction_id: '',
-            event_callback: openDest,
+            event_callback: callback,
           })
         } else {
-          openDest()
+          callback()
         }
         return false
       }

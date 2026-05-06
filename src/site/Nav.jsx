@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { Menu, MessageCircle, X } from 'lucide-react'
 import { Button } from './Button'
 import { SECTION_IDS, hashForSectionId, navigateToSectionId, whatsappHref } from '../constants'
+import { trackLeadConversionOpen } from '../utils/adsConversion'
 
 const links = [
   { label: 'Início', id: SECTION_IDS.inicio },
@@ -15,6 +16,7 @@ const links = [
 export function Nav() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const waUrl = whatsappHref()
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 20)
@@ -64,7 +66,12 @@ export function Nav() {
         </nav>
 
         <div className="pg-nav__end">
-          <Button variant="whatsapp" href={whatsappHref()} className="pg-nav__cta">
+          <Button
+            variant="whatsapp"
+            href={waUrl}
+            className="pg-nav__cta"
+            onClick={(e) => trackLeadConversionOpen(e, waUrl)}
+          >
             <MessageCircle size={18} aria-hidden />
             WhatsApp
           </Button>
@@ -107,9 +114,12 @@ export function Nav() {
             ))}
             <Button
               variant="whatsapp"
-              href={whatsappHref()}
+              href={waUrl}
               className="pg-nav__sheet-wa"
-              onClick={() => setOpen(false)}
+              onClick={(e) => {
+                setOpen(false)
+                trackLeadConversionOpen(e, waUrl)
+              }}
             >
               <MessageCircle size={18} aria-hidden />
               WhatsApp

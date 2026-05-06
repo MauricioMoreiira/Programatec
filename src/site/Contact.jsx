@@ -1,9 +1,11 @@
 import { motion } from 'framer-motion'
 import { MessageCircle } from 'lucide-react'
 import { SECTION_IDS, WHATSAPP_DISPLAY_NUMBER, whatsappHref } from '../constants'
+import { trackLeadConversionOpen } from '../utils/adsConversion'
 import { Button } from './Button'
 
 export function Contact() {
+  const waUrl = whatsappHref()
   return (
     <section className="pg-cta" id={SECTION_IDS.contato}>
       <div className="pg-wrap">
@@ -23,7 +25,12 @@ export function Contact() {
             {WHATSAPP_DISPLAY_NUMBER}
           </p>
           <div className="pg-cta__row">
-            <Button variant="whatsapp" href={whatsappHref()} className="pg-cta__wa">
+            <Button
+              variant="whatsapp"
+              href={waUrl}
+              className="pg-cta__wa"
+              onClick={(e) => trackLeadConversionOpen(e, waUrl)}
+            >
               <MessageCircle size={20} aria-hidden />
               Abrir WhatsApp
             </Button>

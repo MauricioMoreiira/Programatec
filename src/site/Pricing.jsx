@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { MessageCircle } from 'lucide-react'
 import { Button } from './Button'
 import { SECTION_IDS, whatsappHref } from '../constants'
+import { trackLeadConversionOpen } from '../utils/adsConversion'
 
 const plans = [
   {
@@ -63,6 +64,9 @@ export function Pricing() {
                 variant={p.highlight ? 'whatsapp' : 'secondary'}
                 className="pg-pricing__btn"
                 href={whatsappHref(`Olá! Tenho interesse no plano "${p.name}".`)}
+                onClick={(e) =>
+                  trackLeadConversionOpen(e, whatsappHref(`Olá! Tenho interesse no plano "${p.name}".`))
+                }
               >
                 Chamar no WhatsApp
                 <MessageCircle size={16} aria-hidden />

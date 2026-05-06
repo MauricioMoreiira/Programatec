@@ -2,8 +2,10 @@ import { motion } from 'framer-motion'
 import { MessageCircle } from 'lucide-react'
 import { Button } from './Button'
 import { SECTION_IDS, hashForSectionId, navigateToSectionId, whatsappHref } from '../constants'
+import { trackLeadConversionOpen } from '../utils/adsConversion'
 
 export function Hero() {
+  const heroWhatsAppUrl = whatsappHref('Olá! Gostaria de pedir um orçamento.')
   return (
     <section className="pg-hero" id={SECTION_IDS.inicio}>
       <div className="pg-hero__aurora" aria-hidden />
@@ -50,7 +52,8 @@ export function Hero() {
           <Button
             variant="whatsapp"
             className="pg-hero__btn"
-            href={whatsappHref('Olá! Gostaria de pedir um orçamento.')}
+            href={heroWhatsAppUrl}
+            onClick={(e) => trackLeadConversionOpen(e, heroWhatsAppUrl)}
           >
             Falar no WhatsApp
             <MessageCircle size={18} aria-hidden />

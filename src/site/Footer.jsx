@@ -1,8 +1,10 @@
 import { SECTION_IDS, hashForSectionId, navigateToSectionId, whatsappHref } from '../constants'
+import { trackLeadConversionOpen } from '../utils/adsConversion'
 
 const y = new Date().getFullYear()
 
 export function Footer() {
+  const waUrl = whatsappHref()
   return (
     <footer className="pg-foot">
       <div className="pg-wrap pg-foot__inner">
@@ -45,7 +47,7 @@ export function Footer() {
           >
             Dúvidas
           </a>
-          <a href={whatsappHref()} target="_blank" rel="noopener noreferrer">
+          <a href={waUrl} target="_blank" rel="noopener noreferrer" onClick={(e) => trackLeadConversionOpen(e, waUrl)}>
             WhatsApp
           </a>
         </nav>
