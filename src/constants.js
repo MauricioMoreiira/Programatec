@@ -5,6 +5,13 @@ export const WHATSAPP_E164_DIGITS = '5551995465854'
 export const WHATSAPP_DISPLAY_NUMBER = '(51) 99546-5854'
 
 /**
+ * Texto pré-preenchido no WhatsApp ao tocar na barra inferior (mobile).
+ * Tom profissional e consultivo, sem soar genérico demais.
+ */
+export const WHATSAPP_MOBILE_BAR_MESSAGE =
+  'Olá! Acabei de ver o site da Programatec e gostaria de conversar sobre um site para meu negócio — objetivos, prazo e investimento. Podem me orientar?'
+
+/**
  * Link `wa.me` com texto opcional já preenchido.
  * @param {string} [message]
  */

@@ -1,10 +1,16 @@
 import { MessageCircle, Banknote } from 'lucide-react'
 import { Button } from './Button'
-import { SECTION_IDS, hashForSectionId, navigateToSectionId, whatsappHref } from '../constants'
+import {
+  SECTION_IDS,
+  WHATSAPP_MOBILE_BAR_MESSAGE,
+  hashForSectionId,
+  navigateToSectionId,
+  whatsappHref,
+} from '../constants'
 import { trackLeadConversionOpen } from '../utils/adsConversion'
 
 export function MobileBar() {
-  const waUrl = whatsappHref()
+  const waUrl = whatsappHref(WHATSAPP_MOBILE_BAR_MESSAGE)
   return (
     <div className="pg-mbar" role="navigation" aria-label="Ações móveis">
       <Button
