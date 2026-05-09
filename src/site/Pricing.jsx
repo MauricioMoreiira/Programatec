@@ -7,7 +7,7 @@ import { trackLeadConversionOpen } from '../utils/adsConversion'
 const plans = [
   {
     name: 'Landing',
-    price: 'R$ 1.200',
+    price: 'R$ 850',
     note: 'a partir de',
     delay: 'até 7 dias*',
     desc: 'Uma página forte para campanha e teste. Conteúdo, CTA, performance móvel e base sólida para o Google entender a página.',

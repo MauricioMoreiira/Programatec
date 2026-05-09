@@ -9,7 +9,7 @@ const qa = [
     a: 'Não vendemos o mesmo pacote rebrandado. O ponto de partida é a sua operação, não um demo genérico. Pode haver padrões internos (como em qualquer estúdio), mas a entrega é feita para o funil e o posicionamento do seu negócio.',
   },
   {
-    q: 'Os R$ 1.200 e R$ 2.400 são preço fechado?',
+    q: 'Os R$ 850 e R$ 2.400 são preço fechado?',
     a: 'São “a partir de” e ponto de partida de conversa. O valor final e o prazo fecham no briefing, quando o escopo tiver tamanho, integrações, volume de texto e tudo o que ajusta a realidade (para cima ou para os lados) com clareza.',
   },
   {
