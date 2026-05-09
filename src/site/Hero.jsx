@@ -1,11 +1,17 @@
 import { motion } from 'framer-motion'
 import { MessageCircle } from 'lucide-react'
 import { Button } from './Button'
-import { SECTION_IDS, hashForSectionId, navigateToSectionId, whatsappHref } from '../constants'
+import {
+  SECTION_IDS,
+  WHATSAPP_DEFAULT_MESSAGE,
+  hashForSectionId,
+  navigateToSectionId,
+  whatsappHref,
+} from '../constants'
 import { trackLeadConversionOpen } from '../utils/adsConversion'
 
 export function Hero() {
-  const heroWhatsAppUrl = whatsappHref('Olá! Gostaria de pedir um orçamento.')
+  const heroWhatsAppUrl = whatsappHref(WHATSAPP_DEFAULT_MESSAGE)
   return (
     <section className="pg-hero" id={SECTION_IDS.inicio}>
       <div className="pg-hero__aurora" aria-hidden />
@@ -28,7 +34,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.06 }}
         >
-          Design, performance e estratégia unidos para transformar seu site em uma máquina de vendas.
+          Criamos sites profissionais, modernos e rápidos para fortalecer sua marca e presença digital.
         </motion.p>
 
         <motion.div
@@ -37,7 +43,6 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.12 }}
         >
-          <p className="pg-hero__lead-line">Aqui não existe &quot;mais do mesmo&quot;.</p>
           <p className="pg-hero__lead-line">
             Cada projeto é construído do zero para posicionar sua empresa e gerar resultado real.
           </p>
